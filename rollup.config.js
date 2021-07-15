@@ -40,8 +40,18 @@ export default {
 		svelte({
 			compilerOptions: {
 				// enable run-time checks when not in production
-				dev: !production
-			}
+				dev: !production,
+				customElement: true
+			},
+			include: /\.webcomponent\.svelte$/
+		}),
+		svelte({
+			compilerOptions: {
+				// enable run-time checks when not in production
+				dev: !production,
+				customElement: false
+			},
+			exclude: /\.webcomponent\.svelte$/
 		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance

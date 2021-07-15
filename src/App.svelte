@@ -1,12 +1,12 @@
 <script>
-	import Card from './Card.svelte'
+	import './Card.webcomponent.svelte';
 </script>
 
 <main>
-	<Card color="blue"/>
-	<Card color="red"/>
-	<Card color="yellow"/>
-	<Card color="green"/>
+	<uno-card color="blue"/>
+	<uno-card color="red"/>
+	<uno-card color="yellow"/>
+	<uno-card color="green"/>
 </main>
 
 <style>
@@ -19,4 +19,14 @@
     	scroll-snap-type: x mandatory;
 		height: 100vh;
 	}
+
+    uno-card {
+        align-items: center;
+        display: flex;
+        flex: 0 0 100vw;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0;
+        scroll-snap-align: start;
+    }
 </style>
