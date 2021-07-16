@@ -10,26 +10,26 @@
         Würfelspiel
     </span>
     <form>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain"></div>
-        <div class="chain additional"></div>
-        <div class="chain additional"></div>
-        <div class="chain additional"></div>
-        <div class="chain additional"></div>
-        <div class="chain additional"></div>
-        <div class="chain additional"></div>
-        <div class="chain additional"></div>
-        <div class="chain additional"></div>
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="">
+        <input type="text" value="" disabled>
+        <input type="text" value="" disabled>
+        <input type="text" value="" disabled>
+        <input type="text" value="" disabled>
+        <input type="text" value="" disabled>
+        <input type="text" value="" disabled>
+        <input type="text" value="" disabled>
+        <input type="text" value="" disabled>
     </form>
 </div>
 
@@ -68,18 +68,19 @@
         display: grid;
         grid-template-columns: repeat(4, var(--grid-template-units));
         grid-template-rows: repeat(5, var(--grid-template-units));
-        gap: clamp(40px, 10vw, 30px) clamp(20px, 6vw, 30px);
+        /* gap: clamp(40px, 10vw, 30px) clamp(20px, 6vw, 30px); */
+        gap: clamp(40px, 10vw, 40px) clamp(20px, 6vw, 20px);
         margin-top: 20px
     }
 
-    .chain {
+    input {
         background-color: white;
         border: 3px solid black;
         border-radius: 5px;
         box-sizing: border-box;
     }
 
-    .additional {
+    [disabled] {
         background-color: transparent;
         border-style: dashed;
     }
