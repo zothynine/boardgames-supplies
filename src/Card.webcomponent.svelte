@@ -63,13 +63,13 @@
     }
 
     form {
-        --grid-template-units: clamp(50px, 10vw, 90px);
+        --grid-template-units: 50px;
         align-self: center;
         display: grid;
         grid-template-columns: repeat(4, var(--grid-template-units));
         grid-template-rows: repeat(5, var(--grid-template-units));
-        /* gap: clamp(40px, 10vw, 30px) clamp(20px, 6vw, 30px); */
-        gap: clamp(40px, 10vw, 40px) clamp(20px, 6vw, 20px);
+        /* gap: clamp(10px, 6vw, 25px) clamp(5px, 6vw, 20px); */
+        gap: 15px 10px;
         margin-top: 20px
     }
 
