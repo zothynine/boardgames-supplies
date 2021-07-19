@@ -1,21 +1,43 @@
 <svelte:options tag="uno-card"/>
 
 <script>
-import { onMount } from "svelte";
-
-
-    // * 1 2 3 4 5 6 +1 -1
     export let color = "white";
     const values = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
     let chainIndex = 0;
 
+    function deleteLast() {
+        if (chainIndex === 0) return;
+        values[chainIndex-1] = null;
+        chainIndex-=1;
+    }
+
+    function addField(card) {
+        if(!card) return;
+        const nextField = card.querySelector("[disabled]");
+        if (nextField) nextField.removeAttribute("disabled")
+    }
+
+    function addToChain(val) {
+        values[chainIndex] = val;
+        chainIndex++;
+    }
 
     function onButtonClick(event) {
         const val = event?.target?.closest("button")?.value;
-        if (!val || val === "delete" || val === "add") return;
 
-        values[chainIndex] = val;
-        chainIndex++;
+        if (!val) return;
+
+        switch (val) {
+            case "delete":
+                deleteLast();
+                break;
+            case "add":
+                addField(event.target.offsetParent);
+                break;
+            default:
+                addToChain(val);
+                break;
+        }
     }
 </script>
 
@@ -87,7 +109,6 @@ import { onMount } from "svelte";
         align-self: flex-start;
         color: rgba(255, 255, 0, 0.774);
         display: inline;
-        font-size: 0.75rem;
         font-weight: bold;
         text-align: center;
         -webkit-text-stroke: 1px white;
@@ -102,7 +123,7 @@ import { onMount } from "svelte";
     }
 
     .branding strong {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .chain {
