@@ -36,17 +36,17 @@
         </fieldset>
         <fieldset class="buttons">
             <div>
-                <button type="button" value="1">1</button>
-                <button type="button" value="2">2</button>
-                <button type="button" value="3">3</button>
-                <button type="button" value="4">4</button>
-                <button type="button" value="5">5</button>
+                <button type="button" value="1"><span>1</span></button>
+                <button type="button" value="2"><span>2</span></button>
+                <button type="button" value="3"><span>3</span></button>
+                <button type="button" value="4"><span>4</span></button>
+                <button type="button" value="5"><span>5</span></button>
             </div>
             <div>
-                <button type="button" value="6">6</button>
-                <button type="button" value="*">*</button>
-                <button type="button" value="-1">-1</button>
-                <button type="button" value="+1">+1</button>
+                <button type="button" value="6"><span>6</span></button>
+                <button type="button" value="*"><span>*</span></button>
+                <button type="button" value="-1"><span>-1</span></button>
+                <button type="button" value="+1"><span>+1</span></button>
             </div>
         </fieldset>
     </form>
@@ -123,7 +123,19 @@
         height: 50px;
     }
 
-    button[value="*"],
+    button span {
+        font-size: 2rem;
+    }
+
+    button[value="*"] {
+        background-color: white;
+        color: black;
+    }
+
+    button[value="*"] span {
+        font-size: 3.5rem;
+    }
+
     button[value="-1"],
     button[value="+1"] {
         background-color: black;
