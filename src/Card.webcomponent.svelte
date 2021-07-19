@@ -1,9 +1,22 @@
 <svelte:options tag="uno-card"/>
 
 <script>
+import { onMount } from "svelte";
+
+
     // * 1 2 3 4 5 6 +1 -1
     export let color = "white";
     const values = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+    let chainIndex = 0;
+
+
+    function onButtonClick(event) {
+        const val = event?.target?.closest("button")?.value;
+        if (!val || val === "delete" || val === "add") return;
+
+        values[chainIndex] = val;
+        chainIndex++;
+    }
 </script>
 
 <div class="card" style="--card-color: {color}">
@@ -34,7 +47,7 @@
             <input bind:value={values[18]} type="text" disabled>
             <input bind:value={values[19]} type="text" disabled>
         </fieldset>
-        <fieldset class="buttons">
+        <fieldset class="buttons" on:click={onButtonClick}>
             <div>
                 <button type="button" value="1"><span>1</span></button>
                 <button type="button" value="2"><span>2</span></button>
@@ -45,28 +58,29 @@
             <div>
                 <button type="button" value="6"><span>6</span></button>
                 <button type="button" value="*"><span>*</span></button>
-                <button type="button" value="-1"><span>-1</span></button>
-                <button type="button" value="+1"><span>+1</span></button>
+                <button type="button" value="delete"><span>-1</span></button>
+                <button type="button" value="add"><span>+1</span></button>
             </div>
         </fieldset>
     </form>
 </div>
 
 <style>
-    fieldset {
-        border: none;
-    }
-
     .card {
+        --bg-color: white;
+        --border-radius: 5px;
+        --border: 3px solid black;
         background-color: var(--card-color);
         border-radius: 16px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        /* height: min(130vw, 90vh); */
         padding: 16px 32px 32px;
         position: relative;
-        /* width: clamp(320px, 60vh, 90vw); */
+    }
+
+    fieldset {
+        border: none;
     }
 
     .branding {
@@ -97,10 +111,13 @@
     }
 
     input {
-        background-color: white;
-        border: 3px solid black;
-        border-radius: 5px;
+        background-color: var(--bg-color);
+        border: var(--border);
+        border-radius: var(--border-radius);
         box-sizing: border-box;
+        text-align: center;
+        font-size: 2rem;
+        padding: 0;
     }
 
     .buttons div {
@@ -115,9 +132,9 @@
     }
 
     button {
-        background-color: white;
-        border: 1px solid black;
-        border-radius: 3px;
+        background-color: var(--bg-color);
+        border: var(--border);
+        border-radius: var(--border-radius);
         display: block;
         flex-basis: 50px;
         height: 50px;
@@ -136,8 +153,8 @@
         font-size: 3.5rem;
     }
 
-    button[value="-1"],
-    button[value="+1"] {
+    button[value="delete"],
+    button[value="add"] {
         background-color: black;
         color: white;
     }
