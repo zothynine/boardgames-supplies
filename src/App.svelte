@@ -29,4 +29,10 @@
         padding: 0;
         scroll-snap-align: start;
     }
+
+	@media (orientation: landscape) and (min-width: 1280px) {
+		uno-card {
+			flex: 1 1 auto;
+		}
+	}
 </style>
