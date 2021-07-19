@@ -2,6 +2,7 @@
 
 <script>
     export let color = "white";
+    const values = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
 </script>
 
 <div class="card" style="--card-color: {color}">
@@ -10,26 +11,26 @@
         Würfelspiel
     </span>
     <form>
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="">
-        <input type="text" value="" disabled>
-        <input type="text" value="" disabled>
-        <input type="text" value="" disabled>
-        <input type="text" value="" disabled>
-        <input type="text" value="" disabled>
-        <input type="text" value="" disabled>
-        <input type="text" value="" disabled>
-        <input type="text" value="" disabled>
+        <input bind:value={values[0]} type="text">
+        <input bind:value={values[1]} type="text">
+        <input bind:value={values[2]} type="text">
+        <input bind:value={values[3]} type="text">
+        <input bind:value={values[4]} type="text">
+        <input bind:value={values[5]} type="text">
+        <input bind:value={values[6]} type="text">
+        <input bind:value={values[7]} type="text">
+        <input bind:value={values[8]} type="text">
+        <input bind:value={values[9]} type="text">
+        <input bind:value={values[10]} type="text">
+        <input bind:value={values[11]} type="text">
+        <input bind:value={values[12]} type="text" disabled>
+        <input bind:value={values[13]} type="text" disabled>
+        <input bind:value={values[14]} type="text" disabled>
+        <input bind:value={values[15]} type="text" disabled>
+        <input bind:value={values[16]} type="text" disabled>
+        <input bind:value={values[17]} type="text" disabled>
+        <input bind:value={values[18]} type="text" disabled>
+        <input bind:value={values[19]} type="text" disabled>
     </form>
 </div>
 
