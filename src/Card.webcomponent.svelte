@@ -2,12 +2,12 @@
 
 <script>
     export let color = "white";
-    const values = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+    const chain = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
     let chainIndex = 0;
 
     function deleteLast() {
         if (chainIndex === 0) return;
-        values[chainIndex-1] = null;
+        chain[chainIndex-1] = null;
         chainIndex-=1;
     }
 
@@ -18,7 +18,7 @@
     }
 
     function addToChain(val) {
-        values[chainIndex] = val;
+        chain[chainIndex] = val;
         chainIndex++;
     }
 
@@ -48,26 +48,26 @@
     </span>
     <form>
         <fieldset class="chain">
-            <input bind:value={values[0]} type="text">
-            <input bind:value={values[1]} type="text">
-            <input bind:value={values[2]} type="text">
-            <input bind:value={values[3]} type="text">
-            <input bind:value={values[4]} type="text">
-            <input bind:value={values[5]} type="text">
-            <input bind:value={values[6]} type="text">
-            <input bind:value={values[7]} type="text">
-            <input bind:value={values[8]} type="text">
-            <input bind:value={values[9]} type="text">
-            <input bind:value={values[10]} type="text">
-            <input bind:value={values[11]} type="text">
-            <input bind:value={values[12]} type="text" disabled>
-            <input bind:value={values[13]} type="text" disabled>
-            <input bind:value={values[14]} type="text" disabled>
-            <input bind:value={values[15]} type="text" disabled>
-            <input bind:value={values[16]} type="text" disabled>
-            <input bind:value={values[17]} type="text" disabled>
-            <input bind:value={values[18]} type="text" disabled>
-            <input bind:value={values[19]} type="text" disabled>
+            <input bind:value={chain[0]} type="text">
+            <input bind:value={chain[1]} type="text">
+            <input bind:value={chain[2]} type="text">
+            <input bind:value={chain[3]} type="text">
+            <input bind:value={chain[4]} type="text">
+            <input bind:value={chain[5]} type="text">
+            <input bind:value={chain[6]} type="text">
+            <input bind:value={chain[7]} type="text">
+            <input bind:value={chain[8]} type="text">
+            <input bind:value={chain[9]} type="text">
+            <input bind:value={chain[10]} type="text">
+            <input bind:value={chain[11]} type="text">
+            <input bind:value={chain[12]} type="text" disabled>
+            <input bind:value={chain[13]} type="text" disabled>
+            <input bind:value={chain[14]} type="text" disabled>
+            <input bind:value={chain[15]} type="text" disabled>
+            <input bind:value={chain[16]} type="text" disabled>
+            <input bind:value={chain[17]} type="text" disabled>
+            <input bind:value={chain[18]} type="text" disabled>
+            <input bind:value={chain[19]} type="text" disabled>
         </fieldset>
         <fieldset class="buttons" on:click={onButtonClick}>
             <div>
