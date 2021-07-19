@@ -5,7 +5,7 @@
 <main>
 	<uno-card color="blue"/>
 	<uno-card color="red"/>
-	<uno-card color="yellow"/>
+	<uno-card color="orange"/>
 	<uno-card color="green"/>
 </main>
 

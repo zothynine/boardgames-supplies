@@ -85,19 +85,24 @@ import { onMount } from "svelte";
 
     .branding {
         align-self: flex-start;
-        color: white;
+        color: rgba(255, 255, 0, 0.774);
         display: inline;
-        font-size: 0.6rem;
+        font-size: 0.75rem;
         font-weight: bold;
         text-align: center;
-        text-shadow: -2px 0 0 black;
-        transform: rotate(-8deg);
+        -webkit-text-stroke: 1px white;
+        text-shadow: -2px 0 0 black,
+                    2px 0 0 black,
+                    0 -2px 0 black,
+                    0 2px 0 black,
+                    -2px -2px 0 black,
+                    2px 2px 0 black,
+                    2px -2px 0 black,
+                    -2px 2px 0 black;
     }
 
     .branding strong {
-        display: block;
         font-size: 1rem;
-        text-shadow: -4px 0 0 black;
     }
 
     .chain {
