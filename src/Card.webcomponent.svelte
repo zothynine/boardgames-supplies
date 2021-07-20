@@ -156,6 +156,7 @@
         text-align: center;
         font-size: 2rem;
         padding: 0;
+        pointer-events: none;
     }
 
     .buttons div {
