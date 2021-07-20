@@ -22,7 +22,14 @@
         chainIndex++;
     }
 
+    function won() {
+        alert(`${color.toUpperCase()} IS THE WINNER`);
+        window.location.reload();
+    }
+
     function onButtonClick(event) {
+        const card = event.target.offsetParent;
+        const nextInput = card.querySelectorAll(".chain input")[chainIndex+1];
         const val = event?.target?.closest("button")?.value;
 
         if (!val) return;
@@ -32,10 +39,11 @@
                 deleteLast();
                 break;
             case "add":
-                addField(event.target.offsetParent);
+                addField(card);
                 break;
             default:
-                addToChain(val);
+                addToChain(val, nextInput.disabled);
+                if (nextInput.disabled) won();
                 break;
         }
     }
