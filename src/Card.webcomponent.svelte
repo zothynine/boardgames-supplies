@@ -42,8 +42,12 @@
                 addField(card);
                 break;
             default:
-                addToChain(val, nextInput.disabled);
-                if (nextInput.disabled) won();
+                if (nextInput) {
+                    addToChain(val, nextInput.disabled);
+                    if (nextInput.disabled) won();
+                } else {
+                    won();
+                }
                 break;
         }
     }
