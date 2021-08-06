@@ -1,4 +1,4 @@
-name: Deploy App
+name: Deploy Unoscore App
 
 on: [push]
 
@@ -13,4 +13,4 @@ jobs:
         with:
           node-version: 16
       - run: npm install -g surge
-      - run: surge ./public ${{ secrets.SURGE_DOMAIN }} ${{ secrets.SURGE_TOKEN }}
+      - run: surge ./unoscore/public ${{ secrets.SURGE_DOMAIN }} ${{ secrets.SURGE_TOKEN }}
