@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<em class="version">1.0</em>
+	<em class="version">1.0.1</em>
 	<uno-card color="blue" style="--card-color: blue"/>
 	<uno-card color="red" style="--card-color: red"/>
 	<uno-card color="orange" style="--card-color: orange"/>
