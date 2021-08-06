@@ -54,10 +54,6 @@
 </script>
 
 <div class="card">
-    <!-- <span class="branding">
-        <strong>Uno</strong>
-        Würfelspiel
-    </span> -->
     <form>
         <fieldset class="chain">
             <input bind:value={chain[0]} type="text">
@@ -120,27 +116,6 @@
     fieldset + fieldset {
         padding-top: 15px;
     }
-
-    .branding {
-        align-self: flex-start;
-        color: rgba(255, 255, 0, 0.774);
-        display: inline;
-        font-weight: bold;
-        text-align: center;
-        -webkit-text-stroke: 1px white;
-        text-shadow: -2px 0 0 black,
-                    2px 0 0 black,
-                    0 -2px 0 black,
-                    0 2px 0 black,
-                    -2px -2px 0 black,
-                    2px 2px 0 black,
-                    2px -2px 0 black,
-                    -2px 2px 0 black;
-    }
-
-    /* .branding strong {
-        font-size: 1.5rem;
-    } */
 
     .chain {
         --grid-template-units: calc(var(--width-basis, 25vw)/5 - 15px);
