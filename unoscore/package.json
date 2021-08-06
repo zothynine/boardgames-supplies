@@ -19,12 +19,12 @@
     "surge": "latest",
     "svelte": "^3.42.1"
   },
-  "dependencies": {
-    "sirv-cli": "^1.0.0"
-  },
   "git": {
     "scripts": {
       "pre-push": "surge --project ./public --domain unoscore.surge.sh"
     }
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
   }
 }
