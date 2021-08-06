@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploying to surge
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Install surge and fire deployment
         uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: 8
       - run: npm install -g surge
       - run: surge ./unoscore/public ${{ secrets.SURGE_DOMAIN }} ${{ secrets.SURGE_TOKEN }}
