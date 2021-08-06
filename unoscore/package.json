@@ -10,19 +10,12 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
-    "git-scripts": "^0.4.3",
     "rollup": "^2.56.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
-    "surge": "latest",
     "svelte": "^3.42.1"
-  },
-  "git": {
-    "scripts": {
-      "pre-push": "surge --project ./public --domain unoscore.surge.sh"
-    }
   },
   "dependencies": {
     "sirv-cli": "^1.0.0"
