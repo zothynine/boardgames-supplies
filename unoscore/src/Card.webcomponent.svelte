@@ -53,11 +53,11 @@
     }
 </script>
 
-<div class="card" style="--card-color: {color}">
-    <span class="branding">
+<div class="card">
+    <!-- <span class="branding">
         <strong>Uno</strong>
         Würfelspiel
-    </span>
+    </span> -->
     <form>
         <fieldset class="chain">
             <input bind:value={chain[0]} type="text">
@@ -104,17 +104,21 @@
         --bg-color: white;
         --border-radius: 5px;
         --border: 3px solid black;
-        background-color: var(--card-color);
-        border-radius: 16px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        height: 100%;
         padding: 16px 32px 32px;
         position: relative;
     }
 
     fieldset {
         border: none;
+        padding: 0;
+    }
+    
+    fieldset + fieldset {
+        padding-top: 15px;
     }
 
     .branding {
@@ -134,17 +138,17 @@
                     -2px 2px 0 black;
     }
 
-    .branding strong {
+    /* .branding strong {
         font-size: 1.5rem;
-    }
+    } */
 
     .chain {
-        --grid-template-units: 50px;
+        --grid-template-units: calc(var(--width-basis, 25vw)/5 - 15px);
         align-self: center;
         display: grid;
         grid-template-columns: repeat(4, var(--grid-template-units));
         grid-template-rows: repeat(5, var(--grid-template-units));
-        gap: 15px 10px;
+        gap: 10px;
         margin-top: 10px
     }
 
@@ -162,8 +166,7 @@
     .buttons div {
         display: flex;
         flex-direction: row;
-        /* gap: 10px; */
-        justify-content: space-between;
+        gap: 3px;
     }
 
     .buttons div + div {
@@ -177,6 +180,7 @@
         display: block;
         flex-basis: 50px;
         height: 50px;
+        margin: 0;
     }
 
     button span {
