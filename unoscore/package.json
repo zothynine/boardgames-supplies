@@ -24,7 +24,7 @@
   },
   "git": {
     "scripts": {
-      "pre=push": "surge --project ./public --domain unoscore.surge.sh"
+      "pre-push": "surge --project ./public --domain unoscore.surge.sh"
     }
   }
 }
