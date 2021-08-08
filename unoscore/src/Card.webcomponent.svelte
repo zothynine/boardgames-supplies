@@ -20,16 +20,12 @@
     function addToChain(val) {
         chain[chainIndex] = val;
         chainIndex++;
-    }
-
-    function won() {
-        alert(`${color.toUpperCase()} IS THE WINNER`);
-        window.location.reload();
+        return val;
     }
 
     function onButtonClick(event) {
         const card = event.target.offsetParent;
-        const nextInput = card.querySelectorAll(".chain input")[chainIndex+1];
+        const nextInput = card.querySelectorAll(".chain input")[chainIndex];
         const val = event?.target?.closest("button")?.value;
 
         if (!val) return;
@@ -42,12 +38,7 @@
                 addField(card);
                 break;
             default:
-                if (nextInput) {
-                    addToChain(val, nextInput.disabled);
-                    if (nextInput.disabled) won();
-                } else {
-                    won();
-                }
+                !!nextInput && !nextInput.disabled && addToChain(val);
                 break;
         }
     }
