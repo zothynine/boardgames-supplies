@@ -2,14 +2,10 @@
 	import './Card.webcomponent.svelte';
 
 	const VERSION = "1.0.2";
-
-	function reset() {
-		window.location.reload();
-	}
 </script>
 
 <main>
-	<em class="version" on:click={reset}>{VERSION}</em>
+	<em class="version">{VERSION}</em>
 	<uno-card color="blue" style="--card-color: blue"/>
 	<uno-card color="red" style="--card-color: red"/>
 	<uno-card color="orange" style="--card-color: orange"/>

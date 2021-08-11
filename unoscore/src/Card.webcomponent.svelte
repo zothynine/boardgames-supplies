@@ -42,6 +42,13 @@
                 break;
         }
     }
+
+    function reset() {
+        const reset = confirm("Really reset?")
+        if (reset) {
+            window.location.reload();
+        }
+    }
 </script>
 
 <div class="card">
@@ -81,6 +88,7 @@
                 <button type="button" value="*"><span>*</span></button>
                 <button type="button" value="delete"><span>-1</span></button>
                 <button type="button" value="add"><span>+1</span></button>
+                <button type="button" on:click={reset}><span>R</span></button>
             </div>
         </fieldset>
     </form>
