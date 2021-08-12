@@ -3,12 +3,12 @@ name: Deploy Unoscore App
 on: [push]
 
 jobs:
-  surge-deploy:
-    name: Deploying to ${{ secrets.SURGE_DOMAIN }}
+  build:
     runs-on: ubuntu-latest
+    name: Deploying to surge
     steps:
-      - name: Install surge and run deployment
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+      - name: Install surge and fire deployment
         uses: actions/setup-node@v1
         with:
           node-version: 8
