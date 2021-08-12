@@ -18,6 +18,7 @@ jobs:
             unoscore:
               'unoscore/**'
 
+      - if: steps.changes.outputs.unoscore == 'true'
       - name: Install surge and fire deployment
         uses: actions/setup-node@v1
         with:
