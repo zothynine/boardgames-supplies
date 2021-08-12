@@ -3,14 +3,14 @@ name: Deploy Unoscore App
 on: [push]
 
 jobs:
-  build:
+  surge-deploy:
+    name: Deploying to ${{ secrets.SURGE_DOMAIN }}
     runs-on: ubuntu-latest
-    name: Deploying to surge
     steps:
-      - uses: actions/checkout@v1
-      - name: Install surge and fire deployment
+      - name: Install surge and run deployment
+      - uses: actions/checkout@v2
         uses: actions/setup-node@v1
         with:
           node-version: 8
       - run: npm install -g surge
-      - run: surge ./unoscore/public/ ${{ secrets.SURGE_DOMAIN }} ${{ secrets.SURGE_TOKEN }}
+      - run: surge ./unoscore/public/ --domain ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
