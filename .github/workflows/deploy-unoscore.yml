@@ -16,7 +16,7 @@ jobs:
         with:
           filters: |
             unoscore:
-              'unoscore/**'
+              'src/unoscore/**'
 
       - uses: actions/setup-node@v1
         with:
