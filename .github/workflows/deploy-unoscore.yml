@@ -18,9 +18,9 @@ jobs:
             unoscore:
               'unoscore/**'
 
-      - if: steps.changes.outputs.unoscore == 'true'
       - uses: actions/setup-node@v1
         with:
           node-version: 8
+      - if: steps.changes.outputs.unoscore == 'true'
       - run: npm install -g surge
       - run: surge ./unoscore/public/ --domain ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
