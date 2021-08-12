@@ -11,6 +11,15 @@ jobs:
     name: Deploying to surge
     steps:
       - uses: actions/checkout@v2
+
+      - name: Paths Changes Filter
+      - uses: dorny/path-filter@v2
+        id: filter
+        with:
+          filters: |
+            unoscore:
+              'unoscore/**'
+
       - name: Install surge and fire deployment
         uses: actions/setup-node@v1
         with:
