@@ -1,7 +1,6 @@
 <svelte:options tag="uno-card"/>
 
 <script>
-    export let color = "white";
     const chain = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
     let chainIndex = 0;
 
@@ -111,7 +110,7 @@
         border: none;
         padding: 0;
     }
-    
+
     fieldset + fieldset {
         padding-top: 15px;
     }
