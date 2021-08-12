@@ -19,8 +19,8 @@ jobs:
               'unoscore/**'
 
       - if: steps.changes.outputs.unoscore == 'true'
-      - name: Install surge and fire deployment
         uses: actions/setup-node@v1
+      - name: Install surge and fire deployment
         with:
           node-version: 8
       - run: npm install -g surge
