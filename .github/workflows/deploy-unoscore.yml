@@ -11,7 +11,7 @@ jobs:
     name: Deploying to surge
     steps:
       - uses: actions/checkout@v2
-      - uses: dorny/path-filter@v2
+      - uses: dorny/paths-filter@v2.10.2
         id: filter
         with:
           filters: |
