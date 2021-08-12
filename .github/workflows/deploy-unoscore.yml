@@ -23,9 +23,9 @@ jobs:
           node-version: 8
           
       - name: Install surge on match
-        if: steps.changes.outputs.unoscore == 'true'
+        if: steps.filter.outputs.unoscore == 'true'
         run: npm install -g surge
         
       - name: Run deployment on match
-        if: steps.changes.outputs.unoscore == 'true'
+        if: steps.filter.outputs.unoscore == 'true'
         run: surge ./unoscore/public/ --domain ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
