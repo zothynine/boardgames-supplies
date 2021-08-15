@@ -68,3 +68,11 @@ self.addEventListener('fetch', event => {
     })
   );
 });
+
+
+// Run in cosole to remove service worker
+
+// navigator.serviceWorker.getRegistrations().then(function(registrations) {
+//   for(let registration of registrations) {
+//    registration.unregister()
+//  } })
