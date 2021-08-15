@@ -1,5 +1,14 @@
 import App from './App.svelte';
 
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('./sw.js')
+	.then(reg => {
+		console.log('Registration succeeded.');
+	}).catch(error => {
+		console.log('Registration failed with ' + error);
+	});
+}
+
 const app = new App({
 	target: document.body
 });
