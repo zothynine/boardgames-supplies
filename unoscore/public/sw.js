@@ -1,10 +1,11 @@
-const CACHE_NAME = 'v1';
+const CACHE_NAME = 'v1.0.7';
 const urlsToCache = [
   '/',
   '/global.css',
   '/build/bundle.css',
   '/build/bundle.js',
   '/uno_dice_icon.png',
+  '/uno_dice_splash_screen.png'
 ];
 
 self.addEventListener('install', event => {
