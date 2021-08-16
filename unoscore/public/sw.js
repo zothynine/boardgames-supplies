@@ -27,6 +27,7 @@ self.addEventListener('activate', (event) => {
 
   console.log('Deleting old caches');
   event.waitUntil(
+    self.clients.claim(),
     caches.keys().then(keyList => {
       return Promise.all(keyList.map(key => {
         if (CACHE_NAME.indexOf(key) === -1) {
