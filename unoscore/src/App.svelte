@@ -1,7 +1,7 @@
 <script>
 	import './Card.webcomponent.svelte';
 
-	const VERSION = "1.0.72b";
+	const VERSION = "1.0.74";
 </script>
 
 <main>
