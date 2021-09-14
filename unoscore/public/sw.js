@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v1.0.7';
+const CACHE_NAME = 'v1.0.73';
 const urlsToCache = [
   '/',
   '/global.css',
@@ -44,10 +44,13 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', event => {
   console.log('Fetch event for ', event.request.url);
 
+  const isLocalHost = event.request.url.indexOf('localhost') !== -1;
+  console.log('###', isLocalHost)
+
   event.respondWith(
     caches.match(event.request)
     .then(response => {
-      if (response) {
+      if (response && !isLocalHost) {
         console.log('Found ', event.request.url, ' in cache');
         return response;
       }
