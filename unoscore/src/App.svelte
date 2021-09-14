@@ -4,20 +4,24 @@
 	const VERSION = "1.0.7";
 </script>
 
-<main>
-	<em class="version">{VERSION}</em>
-	<uno-card color="blue" style="--card-color: blue"/>
-	<uno-card color="red" style="--card-color: red"/>
-	<uno-card color="orange" style="--card-color: orange"/>
-	<uno-card color="green" style="--card-color: green"/>
+<main class="flex absolute inset-0 overflow-x-auto overflow-y-hidden h-full">
+	<em class="text-white text-xs fixed inset-0.5 opacity-50 text-right not-italic">{VERSION}</em>
+	<uno-card class="flex justify-around items-center bg m-0 p-0" color="blue" style="--card-color: blue"/>
+	<uno-card class="flex justify-around items-center bg m-0 p-0" color="red" style="--card-color: red"/>
+	<uno-card class="flex justify-around items-center bg m-0 p-0" color="orange" style="--card-color: orange"/>
+	<uno-card class="flex justify-around items-center bg m-0 p-0" color="green" style="--card-color: green"/>
 </main>
 
-<style>
-    :root {
-        --width-basis: 100vw;
-    }
+<style global lang="postcss">
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 
-	main {
+  :root {
+      --width-basis: 100vw;
+  }
+
+	/* main {
 		display: flex;
 		position: absolute;
 		inset: 0;
@@ -36,17 +40,13 @@
 		text-align: right;
 		font-style: normal;
 	}
+  */
 
-    uno-card {
-        align-items: center;
-		background-color: var(--card-color);
-        display: flex;
-        flex: 0 0 var(--width-basis);
-        justify-content: space-around;
-        margin: 0;
-        padding: 0;
-        scroll-snap-align: start;
-    }
+  uno-card {
+    background-color: var(--card-color);
+    flex: 0 0 var(--width-basis);
+    scroll-snap-align: start;
+  }
 
 	@media (min-width: 600px) {
 		uno-card {
