@@ -93,90 +93,62 @@
     </form>
 </div>
 
-<style>
-    .card {
-        --bg-color: white;
-        --border-radius: 5px;
-        --border: 3px solid black;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        padding: 16px 32px 32px;
-        position: relative;
-    }
-
-    fieldset {
-        border: none;
-        padding: 0;
-    }
-
-    fieldset + fieldset {
-        padding-top: 15px;
+<style lang="postcss">
+    .card {;
+        @apply box-border flex flex-col h-full relative p-4 pb-8;
     }
 
     .chain {
         --grid-template-units: calc(var(--width-basis, 25vw)/5 - 15px);
-        align-self: center;
-        display: grid;
-        grid-template-columns: repeat(4, var(--grid-template-units));
-        grid-template-rows: repeat(5, var(--grid-template-units));
-        gap: 10px;
-        margin-top: 10px
+        @apply self-center grid gap-1 mt-2.5 grid-cols-4 grid-rows-5 border-none p-0;
+        /* grid-template-columns: repeat(4, var(--grid-template-units));
+        grid-template-rows: repeat(5, var(--grid-template-units)); */
     }
 
     input {
-        background-color: var(--bg-color);
-        border: var(--border);
-        border-radius: var(--border-radius);
-        box-sizing: border-box;
-        text-align: center;
-        font-size: 2rem;
-        padding: 0;
-        pointer-events: none;
+        @apply box-border text-center text-3xl p-0 pointer-events-none rounded-md;
+    }
+
+    .buttons {
+        @apply pt-4 border-none border-0;
     }
 
     .buttons div {
-        display: flex;
-        flex-direction: row;
-        gap: 3px;
+        @apply flex flex-row gap-1;
     }
 
     .buttons div + div {
-        margin-top: 10px;
+        @apply mt-2;
     }
 
     button {
-        background-color: var(--bg-color);
-        border: var(--border);
-        border-radius: var(--border-radius);
-        display: block;
         flex-basis: 50px;
-        height: 50px;
-        margin: 0;
+        @apply block h-3/6 m-0 rounded-md;
+    }
+
+    input,
+    button {
+        @apply bg-white border-solid border-4 border-black;
     }
 
     button span {
-        font-size: 2rem;
+        @apply text-3xl;
     }
 
     button[value="*"] {
-        background-color: white;
-        color: black;
+        @apply bg-white text-black;
     }
 
-    button[value="*"] span {
-        font-size: 3.5rem;
-    }
+    /* button[value="*"] span {
+        @apply text-5xl;
+    } */
 
     button[value="delete"],
     button[value="add"] {
-        background-color: black;
-        color: white;
+        @apply bg-black text-white;
     }
 
     [disabled] {
-        background-color: transparent;
-        border-style: dashed;
+        @apply bg-transparent border-dashed rounded-r-md;
     }
 </style>
