@@ -1,7 +1,7 @@
 <script>
 	import './Card.webcomponent.svelte';
 
-	const VERSION = "1.0.7";
+	const VERSION = "1.0.74";
 </script>
 
 <main class="flex absolute inset-0 overflow-x-auto overflow-y-hidden h-full">
