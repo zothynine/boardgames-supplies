@@ -1,8 +1,8 @@
 <script>
   export let bgColor;
-  const chain = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
+  let chain = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
   let chainIndex = 0;
-
+  
   function deleteLast() {
     if (chainIndex === 0) return;
     chain[chainIndex-1] = null;
@@ -11,8 +11,8 @@
 
   function addField(card) {
     if(!card) return;
-    const nextField = card.querySelector("[disabled]");
-    if (nextField) nextField.removeAttribute("disabled")
+    const nextField = card.querySelector(".disabled");
+    if (nextField) nextField.classList.remove("disabled")
   }
 
   function addToChain(val) {
@@ -23,7 +23,7 @@
 
   function onButtonClick(event) {
     const card = event.target.offsetParent;
-    const nextInput = card.querySelectorAll(".chain input")[chainIndex];
+    const nextInput = card.querySelectorAll(".chain .score")[chainIndex];
     const val = event?.target?.closest("button")?.value;
 
     if (!val) return;
@@ -36,7 +36,7 @@
         addField(card);
         break;
       default:
-        !!nextInput && !nextInput.disabled && addToChain(val);
+        !!nextInput && !nextInput.classList.contains("disabled") && addToChain(val);
         break;
     }
   }
@@ -44,35 +44,37 @@
   function reset() {
     const reset = confirm("Really reset?")
     if (reset) {
-      window.location.reload();
+      chainIndex = 0
+      chain.forEach((item, index) => chain[index] = null);
+      document.querySelectorAll(".score.extra").forEach(item => item.classList.add("disabled"));
     }
   }
 </script>
 
-<div class="panel {bgColor}">
+<div class="panel {bgColor} sm:flex-auto">
   <div class="card">
     <form>
       <fieldset class="chain">
-        <input bind:value={chain[0]} type="text">
-        <input bind:value={chain[1]} type="text">
-        <input bind:value={chain[2]} type="text">
-        <input bind:value={chain[3]} type="text">
-        <input bind:value={chain[4]} type="text">
-        <input bind:value={chain[5]} type="text">
-        <input bind:value={chain[6]} type="text">
-        <input bind:value={chain[7]} type="text">
-        <input bind:value={chain[8]} type="text">
-        <input bind:value={chain[9]} type="text">
-        <input bind:value={chain[10]} type="text">
-        <input bind:value={chain[11]} type="text">
-        <input bind:value={chain[12]} type="text" disabled>
-        <input bind:value={chain[13]} type="text" disabled>
-        <input bind:value={chain[14]} type="text" disabled>
-        <input bind:value={chain[15]} type="text" disabled>
-        <input bind:value={chain[16]} type="text" disabled>
-        <input bind:value={chain[17]} type="text" disabled>
-        <input bind:value={chain[18]} type="text" disabled>
-        <input bind:value={chain[19]} type="text" disabled>
+        <div class="score">{chain[0] || ""}</div>
+        <div class="score">{chain[1] || ""}</div>
+        <div class="score">{chain[2] || ""}</div>
+        <div class="score">{chain[3] || ""}</div>
+        <div class="score">{chain[4] || ""}</div>
+        <div class="score">{chain[5] || ""}</div>
+        <div class="score">{chain[6] || ""}</div>
+        <div class="score">{chain[7] || ""}</div>
+        <div class="score">{chain[8] || ""}</div>
+        <div class="score">{chain[9] || ""}</div>
+        <div class="score">{chain[10] || ""}</div>
+        <div class="score">{chain[11] || ""}</div>
+        <div class="score extra disabled">{chain[12] || ""}</div>
+        <div class="score extra disabled">{chain[13] || ""}</div>
+        <div class="score extra disabled">{chain[14] || ""}</div>
+        <div class="score extra disabled">{chain[15] || ""}</div>
+        <div class="score extra disabled">{chain[16] || ""}</div>
+        <div class="score extra disabled">{chain[17] || ""}</div>
+        <div class="score extra disabled">{chain[18] || ""}</div>
+        <div class="score extra disabled">{chain[19] || ""}</div>
       </fieldset>
       <fieldset class="buttons" on:click={onButtonClick}>
         <div>
@@ -95,6 +97,10 @@
 </div>
 
 <style lang="postcss">
+  :root {
+    --width-basis: 100vw;
+  }
+
   .blue {
     @apply bg-blue-600;
   }
@@ -109,7 +115,8 @@
   }
 
   .panel {
-    @apply flex justify-around items-center m-0 p-0;
+    @apply flex justify-around items-center m-0 p-0 flex-grow-0 flex-shrink-0;
+    flex-basis: var(--width-basis);
   }
 
   .card {;
@@ -118,13 +125,11 @@
 
   .chain {
     --grid-template-units: calc(var(--width-basis, 25vw)/5 - 15px);
-    @apply self-center grid gap-1 mt-2.5 grid-cols-4 grid-rows-5 border-none p-0;
-    /* grid-template-columns: repeat(4, var(--grid-template-units));
-    grid-template-rows: repeat(5, var(--grid-template-units)); */
+    @apply self-center grid gap-2 mt-2.5 grid-cols-4 grid-rows-5 border-none p-0;
   }
 
-  input {
-    @apply box-border text-center text-3xl p-0 pointer-events-none rounded-md;
+  .score {
+    @apply box-border text-center text-3xl p-0 pointer-events-none rounded-md w-14 h-14;
   }
 
   .buttons {
@@ -140,13 +145,13 @@
   }
 
   button {
-    flex-basis: 50px;
     @apply block h-3/6 m-0 rounded-md;
   }
 
-  input,
+  .score,
   button {
-    @apply bg-white border-solid border-4 border-black;
+    @apply bg-white border-solid border-2 border-black;
+    flex-basis: 50px;
   }
 
   button span {
@@ -157,16 +162,24 @@
     @apply bg-white text-black;
   }
 
-  /* button[value="*"] span {
-    @apply text-5xl;
-  } */
-
   button[value="delete"],
   button[value="add"] {
     @apply bg-black text-white;
   }
 
-  [disabled] {
+  .disabled {
     @apply bg-transparent border-dashed rounded-r-md;
+  }
+
+  @media (min-width: 640px) {
+    .panel {
+      --width-basis: 50vw;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .panel {
+      --width-basis: 25vw;
+    }
   }
 </style>
