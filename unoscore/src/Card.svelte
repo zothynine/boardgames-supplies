@@ -117,6 +117,7 @@
   .panel {
     @apply flex justify-around items-center m-0 p-0 flex-grow-0 flex-shrink-0;
     flex-basis: var(--width-basis);
+    scroll-snap-align: start;
   }
 
   .card {;
