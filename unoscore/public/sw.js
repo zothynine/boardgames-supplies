@@ -1,7 +1,6 @@
-const CACHE_NAME = 'v1.0.76';
+const CACHE_NAME = 'v1.0.8';
 const urlsToCache = [
   '/',
-  '/global.css',
   '/build/bundle.css',
   '/build/bundle.js',
   '/uno_dice_icon.png',
