@@ -22,9 +22,11 @@
   }
 
   function onButtonClick(event) {
-    const card = event.target.offsetParent;
-    const nextInput = card.querySelectorAll(".chain .score")[chainIndex];
+    const card = event.target.closest(".card");
+    const nextInput = card.querySelectorAll(".scores .score")[chainIndex];
     const val = event?.target?.closest("button")?.value;
+
+    console.log("###", nextInput);
 
     if (!val) return;
 

@@ -1,11 +1,11 @@
 <script>
 	import Card from './Card.svelte';
 
-	const VERSION = "1.0.76j";
+	const VERSION = "1.0.76rb";
 </script>
 
 <main class="flex absolute inset-0 overflow-x-auto overflow-y-hidden h-full">
-  <em class="text-white text-xs fixed inset-0.5 opacity-50 text-right not-italic">{VERSION}</em>
+  <em class="version">{VERSION}</em>
   <Card bgColor="blue"/>
   <Card bgColor="red"/>
   <Card bgColor="orange"/>
@@ -33,7 +33,7 @@
   }
 
   .version {
-    @apply text-white text-xs opacity-50 fixed not-italic top-0 right-0 inline;
+    @apply text-white text-xs opacity-50 fixed not-italic top-0 right-0;
   }
  
 </style>
