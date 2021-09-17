@@ -53,46 +53,42 @@
 
 <div class="panel {bgColor} sm:flex-auto">
   <div class="card">
-    <form>
-      <fieldset class="chain">
-        <div class="score">{chain[0] || ""}</div>
-        <div class="score">{chain[1] || ""}</div>
-        <div class="score">{chain[2] || ""}</div>
-        <div class="score">{chain[3] || ""}</div>
-        <div class="score">{chain[4] || ""}</div>
-        <div class="score">{chain[5] || ""}</div>
-        <div class="score">{chain[6] || ""}</div>
-        <div class="score">{chain[7] || ""}</div>
-        <div class="score">{chain[8] || ""}</div>
-        <div class="score">{chain[9] || ""}</div>
-        <div class="score">{chain[10] || ""}</div>
-        <div class="score">{chain[11] || ""}</div>
-        <div class="score extra disabled">{chain[12] || ""}</div>
-        <div class="score extra disabled">{chain[13] || ""}</div>
-        <div class="score extra disabled">{chain[14] || ""}</div>
-        <div class="score extra disabled">{chain[15] || ""}</div>
-        <div class="score extra disabled">{chain[16] || ""}</div>
-        <div class="score extra disabled">{chain[17] || ""}</div>
-        <div class="score extra disabled">{chain[18] || ""}</div>
-        <div class="score extra disabled">{chain[19] || ""}</div>
-      </fieldset>
-      <fieldset class="buttons" on:click={onButtonClick}>
-        <div>
-          <button type="button" value="1"><span>1</span></button>
-          <button type="button" value="2"><span>2</span></button>
-          <button type="button" value="3"><span>3</span></button>
-          <button type="button" value="4"><span>4</span></button>
-          <button type="button" value="5"><span>5</span></button>
-        </div>
-        <div>
-          <button type="button" value="6"><span>6</span></button>
-          <button type="button" value="*"><span>*</span></button>
-          <button type="button" value="delete"><span>-1</span></button>
-          <button type="button" value="add"><span>+1</span></button>
-          <button type="button" on:click={reset}><span>R</span></button>
-        </div>
-      </fieldset>
-    </form>
+    <div class="scores">
+      <div class="score">{chain[0] || ""}</div>
+      <div class="score">{chain[1] || ""}</div>
+      <div class="score">{chain[2] || ""}</div>
+      <div class="score">{chain[3] || ""}</div>
+      <div class="score">{chain[4] || ""}</div>
+      <div class="score">{chain[5] || ""}</div>
+      <div class="score">{chain[6] || ""}</div>
+      <div class="score">{chain[7] || ""}</div>
+      <div class="score">{chain[8] || ""}</div>
+      <div class="score">{chain[9] || ""}</div>
+      <div class="score">{chain[10] || ""}</div>
+      <div class="score">{chain[11] || ""}</div>
+      <div class="score extra disabled">{chain[12] || ""}</div>
+      <div class="score extra disabled">{chain[13] || ""}</div>
+      <div class="score extra disabled">{chain[14] || ""}</div>
+      <div class="score extra disabled">{chain[15] || ""}</div>
+      <div class="score extra disabled">{chain[16] || ""}</div>
+      <div class="score extra disabled">{chain[17] || ""}</div>
+      <div class="score extra disabled">{chain[18] || ""}</div>
+      <div class="score extra disabled">{chain[19] || ""}</div>
+    </div>
+
+    <div class="buttons" on:click={onButtonClick}>
+      <button type="button" value="1"><span>1</span></button>
+      <button type="button" value="2"><span>2</span></button>
+      <button type="button" value="3"><span>3</span></button>
+      <button type="button" value="4"><span>4</span></button>
+      <button type="button" value="5"><span>5</span></button>
+      
+      <button type="button" value="6"><span>6</span></button>
+      <button type="button" value="*"><span>*</span></button>
+      <button type="button" value="delete"><span>-1</span></button>
+      <button type="button" value="add"><span>+1</span></button>
+      <button type="button" class="reset" on:click={reset}><span>Reset</span></button>
+    </div>
   </div>
 </div>
 
@@ -120,8 +116,18 @@
     scroll-snap-align: start;
   }
 
-  .card {;
-    @apply box-border flex flex-col h-full relative p-4 pb-8;
+  .scores {;
+    @apply box-border grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(5, 60px);
+    gap: 5px;
+  }
+
+  .buttons {;
+    @apply box-border grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, 60px);
+    gap: 5px;
   }
 
   .chain {
@@ -130,7 +136,7 @@
   }
 
   .score {
-    @apply box-border text-center text-4xl p-0 pointer-events-none rounded-md w-14 h-14;
+    @apply box-border text-center text-4xl p-0 rounded-md w-14 h-14;
     line-height: 50px;
   }
 
@@ -148,6 +154,11 @@
 
   button {
     @apply block h-3/6 m-0 rounded-md;
+    height: 60px;
+  }
+
+  .reset {
+    grid-column: span 3;
   }
 
   .score,

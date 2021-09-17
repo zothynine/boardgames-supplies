@@ -1,7 +1,7 @@
 <script>
 	import Card from './Card.svelte';
 
-	const VERSION = "1.0.76c";
+	const VERSION = "1.0.76j";
 </script>
 
 <main class="flex absolute inset-0 overflow-x-auto overflow-y-hidden h-full">
@@ -33,7 +33,7 @@
   }
 
   .version {
-    @apply text-white text-xs inset-1 opacity-50 fixed text-right not-italic;
+    @apply text-white text-xs opacity-50 fixed not-italic top-0 right-0 inline;
   }
  
 </style>
