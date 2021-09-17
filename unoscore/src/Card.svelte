@@ -130,7 +130,8 @@
   }
 
   .score {
-    @apply box-border text-center text-3xl p-0 pointer-events-none rounded-md w-14 h-14;
+    @apply box-border text-center text-4xl p-0 pointer-events-none rounded-md w-14 h-14;
+    line-height: 50px;
   }
 
   .buttons {
