@@ -1,7 +1,7 @@
 <script>
 	import Card from './Card.svelte';
 
-	const VERSION = "1.0.76";
+	const VERSION = "1.0.76c";
 </script>
 
 <main class="flex absolute inset-0 overflow-x-auto overflow-y-hidden h-full">
@@ -20,6 +20,11 @@
   :root {
     --width-basis: 100vw;
   }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  }
+
 
   main {
     @apply flex absolute inset-0 overflow-x-auto overflow-y-hidden;
