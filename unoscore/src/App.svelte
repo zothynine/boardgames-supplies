@@ -1,7 +1,7 @@
 <script>
 	import Card from './Card.svelte';
 
-	const VERSION = "1.0.8";
+	const VERSION = "1.0.8d";
 </script>
 
 <main class="flex absolute inset-0 overflow-x-auto overflow-y-hidden h-full">
