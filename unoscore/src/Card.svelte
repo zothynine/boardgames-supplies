@@ -26,8 +26,6 @@
     const nextInput = card.querySelectorAll(".scores .score")[chainIndex];
     const val = event?.target?.closest("button")?.value;
 
-    console.log("###", nextInput);
-
     if (!val) return;
 
     switch (val) {
