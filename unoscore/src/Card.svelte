@@ -95,6 +95,8 @@
 <style lang="postcss">
   :root {
     --width-basis: 100vw;
+    --score-tile-size: 50px;
+    --grid-gap: 10px;
   }
 
   .blue {
@@ -111,23 +113,23 @@
   }
 
   .panel {
-    @apply flex justify-around items-center m-0 p-0 flex-grow-0 flex-shrink-0;
+    @apply flex justify-around items-center m-0 p-0 flex-shrink-0;
     flex-basis: var(--width-basis);
     scroll-snap-align: start;
   }
 
   .scores {;
     @apply box-border grid;
-    grid-template-columns: repeat(4, 60px);
-    grid-template-rows: repeat(5, 60px);
-    gap: 5px;
+    grid-template-columns: repeat(4, var(--score-tile-size));
+    grid-template-rows: repeat(5, var(--score-tile-size));
+    gap: var(--grid-gap);
   }
 
   .buttons {;
     @apply box-border grid;
     grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(4, 60px);
-    gap: 5px;
+    grid-template-rows: repeat(4, var(--score-tile-size));
+    gap: var(--gap);
   }
 
   .chain {
@@ -154,7 +156,7 @@
 
   button {
     @apply block h-3/6 m-0 rounded-md;
-    height: 60px;
+    height: var(--score-tile-size);
   }
 
   .reset {
@@ -164,7 +166,6 @@
   .score,
   button {
     @apply bg-white border-solid border-2 border-black;
-    flex-basis: 50px;
   }
 
   button span {
@@ -193,6 +194,13 @@
   @media (min-width: 1024px) {
     .panel {
       --width-basis: 25vw;
+    }
+  }
+
+  @media (min-height: 661px) {
+    :root {
+      --score-tile-size: 60px;
+      --grid-gap: 5px;
     }
   }
 </style>
