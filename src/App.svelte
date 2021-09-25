@@ -15,7 +15,9 @@
   <svelte:component this={app} />
 {/if}
 
-<button class="back" type="button" on:click={() => app = null}>Back</button>
+{#if app !== null}
+  <button class="back" type="button" on:click={() => app = null}>Back</button>
+{/if}
 <em class="version">{VERSION}</em>
 
 <style global lang="postcss">
