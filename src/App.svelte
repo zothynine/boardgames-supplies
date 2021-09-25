@@ -20,9 +20,9 @@
   @tailwind utilities;
 
   .back {
-    @apply fixed top-0 left-0;
+    @apply fixed top-1 left-1 text-xs opacity-50;
   }
   .version {
-      @apply text-black text-xs opacity-50 fixed not-italic top-0 right-0;
+      @apply text-black text-xs opacity-50 fixed not-italic top-1 right-1;
   }
 </style>
