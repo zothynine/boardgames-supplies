@@ -1,18 +1,28 @@
 <script>
   import Unoscore from "./unoscore/Unoscore.svelte";
+  import { app as storedApp } from "./stores";
 	
   const VERSION = "1.0.9a";
   $: app = null;
+  storedApp.subscribe(value => app = value);
 </script>
 
-<div>
+{#if app === null}
+  <div class="apps">
+    <button on:click={ () => app = Unoscore }>Unoscore</button>
+  </div>
+{:else}
   <svelte:component this={app} />
-  <em class="version">{VERSION}</em>
-  <button on:click={ () => app = Unoscore }>Unoscore</button>
-</div>
+{/if}
+
+<button class="back" type="button" on:click={() => app = null}>Back</button>
+<em class="version">{VERSION}</em>
 
 <style global lang="postcss">
-.version {
-    @apply text-black text-xs opacity-50 fixed not-italic top-0 right-0;
-}
+  .back {
+    @apply fixed top-0 left-0;
+  }
+  .version {
+      @apply text-black text-xs opacity-50 fixed not-italic top-0 right-0;
+  }
 </style>

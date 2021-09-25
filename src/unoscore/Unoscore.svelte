@@ -22,8 +22,7 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   }
-
-
+  
   main {
     @apply flex absolute inset-0 overflow-x-auto overflow-y-hidden;
     scroll-snap-type: x mandatory;
