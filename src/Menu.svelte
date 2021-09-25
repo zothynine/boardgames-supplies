@@ -1,11 +1,11 @@
 <script>
   import { app as storedApp } from "./stores";
-  import Unoscore from "./unoscore/Unoscore.svelte";
+  import UnoDiceGame from "./unodicegame/UnoDiceGame.svelte";
 </script>
 
 <main>
-  <button on:click={ () => storedApp.set(Unoscore) }>Unoscore</button>
-  <button on:click={ () => storedApp.set(Unoscore) }>Whatever Comes Next</button>
+  <button on:click={ () => storedApp.set(UnoDiceGame) }>Uno Dice Game</button>
+  <button on:click={ () => storedApp.set(UnoDiceGame) }>Whatever Comes Next</button>
 </main>
 
 <style lang="postcss">
