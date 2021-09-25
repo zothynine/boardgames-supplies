@@ -1,26 +1,24 @@
 <script>
-  import Unoscore from "./unoscore/Unoscore.svelte";
+  import Menu from "./Menu.svelte";
   import { app as storedApp } from "./stores";
 	
   const VERSION = "1.0.9a";
-  $: app = null;
+  $: app = Menu;
   storedApp.subscribe(value => app = value);
 </script>
 
-{#if app === null}
-  <div class="apps">
-    <button on:click={ () => app = Unoscore }>Unoscore</button>
-  </div>
-{:else}
-  <svelte:component this={app} />
-{/if}
+<svelte:component this={app} />
 
-{#if app !== null}
-  <button class="back" type="button" on:click={() => app = null}>Back</button>
+{#if app !== Menu}
+  <button class="back" type="button" on:click={() => app = Menu}>Back</button>
 {/if}
 <em class="version">{VERSION}</em>
 
 <style global lang="postcss">
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
   .back {
     @apply fixed top-0 left-0;
   }
