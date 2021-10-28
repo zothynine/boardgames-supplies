@@ -129,7 +129,7 @@
     @apply box-border grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(4, var(--score-tile-size));
-    gap: var(--gap);
+    gap: 10px;
   }
 
   .chain {
