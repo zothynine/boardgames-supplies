@@ -2,7 +2,7 @@
   import Menu from "./Menu.svelte";
   import { app as storedApp } from "./stores";
 	
-  const VERSION = "1.0.9a";
+  const VERSION = "1.0.10";
   $: app = Menu;
   storedApp.subscribe(value => app = value);
 </script>
