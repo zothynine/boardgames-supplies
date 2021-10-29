@@ -5,7 +5,7 @@
 
 <main>
   <button on:click={ () => storedApp.set(UnoDiceGame) }>Uno Dice Game</button>
-  <button on:click={ () => storedApp.set(UnoDiceGame) }>Whatever Comes Next</button>
+  <!-- <button on:click={ () => storedApp.set(UnoDiceGame) }>Whatever Comes Next</button> -->
 </main>
 
 <style lang="postcss">
