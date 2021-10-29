@@ -36,7 +36,7 @@ self.addEventListener('activate', (event) => {
 });
 
 /**
- * Intercept requests and serve from cache falling back to networlk fetch
+ * Intercept requests and serve from cache falling back to network fetch
  */
 self.addEventListener('fetch', event => {
   console.log('Fetch event for ', event.request.url);
@@ -68,7 +68,7 @@ self.addEventListener('fetch', event => {
 });
 
 
-// Run in cosole to remove service worker
+// Run in console to remove service worker
 
 // navigator.serviceWorker.getRegistrations().then(function(registrations) {
 //   for(let registration of registrations) {
