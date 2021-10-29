@@ -21,8 +21,8 @@ jobs:
       - name: Build BGS App
         run: npm install && npm run build
 
-      - name: Install surge on match
+      - name: Install surge
         run: npm install -g surge
 
-      - name: Run deployment on match
+      - name: Run deployment
         run: surge ./public/ --domain ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
