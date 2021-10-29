@@ -36,17 +36,15 @@ self.addEventListener('activate', (event) => {
 });
 
 /**
- * Intercept requests and serve from cache falling back to networlk fetch
+ * Intercept requests and serve from cache falling back to network fetch
  */
 self.addEventListener('fetch', event => {
   console.log('Fetch event for ', event.request.url);
 
-  const isLocalHost = event.request.url.indexOf('localhost') !== -1;
-
   event.respondWith(
     caches.match(event.request)
     .then(response => {
-      if (response && !isLocalHost) {
+      if (response) {
         console.log('Found ', event.request.url, ' in cache');
         return response;
       }
@@ -70,7 +68,7 @@ self.addEventListener('fetch', event => {
 });
 
 
-// Run in cosole to remove service worker
+// Run in console to remove service worker
 
 // navigator.serviceWorker.getRegistrations().then(function(registrations) {
 //   for(let registration of registrations) {
