@@ -41,12 +41,10 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', event => {
   console.log('Fetch event for ', event.request.url);
 
-  const isLocalHost = event.request.url.indexOf('localhost') !== -1;
-
   event.respondWith(
     caches.match(event.request)
     .then(response => {
-      if (response && !isLocalHost) {
+      if (response) {
         console.log('Found ', event.request.url, ' in cache');
         return response;
       }
