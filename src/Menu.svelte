@@ -8,16 +8,26 @@
   <!-- <button on:click={ () => storedApp.set(UnoDiceGame) }>Whatever Comes Next</button> -->
 </main>
 
-<style lang="postcss">
+<style>
   main {
-    @apply flex flex-col bg-green-600 p-9 min-h-screen;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(22 163 74);
+    padding: 2.25rem;
+    min-height: 100vh;
   }
 
   button {
-    @apply bg-white border-current border-solid border-4 p-2 font-bold uppercase;
+    background-color: white;
+    border-color: currentColor;
+    border-style: solid;
+    border-width: 4px;
+    padding: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   button + button {
-    @apply mt-4;
+    margin-top: 1rem;
   }
 </style>

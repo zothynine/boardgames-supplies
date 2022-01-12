@@ -1,7 +1,7 @@
 <script>
   import Menu from "./Menu.svelte";
   import { app as storedApp } from "./stores";
-	
+
   const VERSION = "1.0.10";
   $: app = Menu;
   storedApp.subscribe(value => app = value);
@@ -14,15 +14,21 @@
 {/if}
 <em class="version">{VERSION}</em>
 
-<style global lang="postcss">
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
+<style global>
   .back {
-    @apply fixed top-1 left-1 text-xs opacity-50;
+    position: fixed;
+    inset: 0.25rem 0 0 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    opacity: 0.5;
   }
+
   .version {
-      @apply text-black text-xs opacity-50 fixed not-italic top-1 right-1;
+      position: fixed;
+      inset: 0.25rem 0.25rem 0 0;
+      color: black;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      opacity: 0.5;
   }
 </style>

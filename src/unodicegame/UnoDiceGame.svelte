@@ -10,7 +10,7 @@
   <Card bgColor="green"/>
 </main>
 
-<style lang="postcss">
+<style>
   :root {
     --width-basis: 100vw;
   }
@@ -20,8 +20,12 @@
   }
 
   main {
-    @apply flex absolute inset-0 overflow-x-auto overflow-y-hidden;
-    scroll-snap-type: x mandatory;
+    display: flex;
     height: 100vh;
-  } 
+    inset: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: absolute;
+    scroll-snap-type: x mandatory;
+  }
 </style>

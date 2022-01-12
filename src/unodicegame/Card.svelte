@@ -2,7 +2,7 @@
   export let bgColor;
   let chain = [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null];
   let chainIndex = 0;
-  
+
   function deleteLast() {
     if (chainIndex === 0) return;
     chain[chainIndex-1] = null;
@@ -82,7 +82,7 @@
       <button type="button" value="3"><span>3</span></button>
       <button type="button" value="4"><span>4</span></button>
       <button type="button" value="5"><span>5</span></button>
-      
+
       <button type="button" value="6"><span>6</span></button>
       <button type="button" value="*"><span>*</span></button>
       <button type="button" value="delete"><span>-1</span></button>
@@ -92,7 +92,7 @@
   </div>
 </div>
 
-<style lang="postcss">
+<style>
   :root {
     --width-basis: 100vw;
     --score-tile-size: 50px;
@@ -100,33 +100,40 @@
   }
 
   .blue {
-    @apply bg-blue-600;
+    background-color: rgb(37 99 235);
   }
   .red {
-    @apply bg-red-600;
+    background-color: rgb(220 38 38);
   }
   .orange {
-    @apply bg-yellow-600;
+    background-color: rgb(202 138 4);
   }
   .green {
-    @apply bg-green-600;
+    background-color: rgb(22 163 74);
   }
 
   .panel {
-    @apply flex justify-around items-center m-0 p-0 flex-shrink-0;
+    display: flex;
     flex-basis: var(--width-basis);
+    flex-shrink: 0;
+    justify-content: space-around;
+    align-items: center;
     scroll-snap-align: start;
+    margin: 0;
+    padding: 0;
   }
 
-  .scores {;
-    @apply box-border grid;
+  .scores {
+    box-sizing: border-box;
+    display: grid;
     grid-template-columns: repeat(4, var(--score-tile-size));
     grid-template-rows: repeat(5, var(--score-tile-size));
     gap: var(--grid-gap);
   }
 
-  .buttons {;
-    @apply box-border grid;
+  .buttons {
+    box-sizing: border-box;
+    display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(4, var(--score-tile-size));
     gap: 10px;
@@ -134,29 +141,49 @@
 
   .chain {
     --grid-template-units: calc(var(--width-basis, 25vw)/5 - 15px);
-    @apply self-center grid gap-2 mt-2.5 grid-cols-4 grid-rows-5 border-none p-0;
+    align-self: center;
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 0.625rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    border-style: none;
+    padding: 0;
   }
 
   .score {
-    @apply box-border text-center text-4xl p-0 rounded-md w-14 h-14;
     line-height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    padding: 0;
+    border-radius: 0.375rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
   .buttons {
-    @apply pt-4 border-none border-0;
+    padding-top: 1rem;
+    border-style: none;
+    border-width: 0;
   }
 
   .buttons div {
-    @apply flex flex-row gap-1;
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
   }
 
   .buttons div + div {
-    @apply mt-2;
+    margin-top: 0.5rem;
   }
 
   button {
-    @apply block h-3/6 m-0 rounded-md;
+    border-radius: 0.375rem;
+    display: block;
     height: var(--score-tile-size);
+    margin: 0;
   }
 
   .reset {
@@ -165,24 +192,31 @@
 
   .score,
   button {
-    @apply bg-white border-solid border-2 border-black;
+    background-color: white;
+    border: 2px solid black;
   }
 
   button span {
-    @apply text-3xl;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   button[value="*"] {
-    @apply bg-white text-black;
+    background-color: white;
+    color: black;
   }
 
   button[value="delete"],
   button[value="add"] {
-    @apply bg-black text-white;
+    background-color: black;
+    color: white;
   }
 
   .disabled {
-    @apply bg-transparent border-dashed rounded-r-md;
+    background-color: transparent;
+    border-bottom-right-radius: 0.375rem;
+    border-style: dashed;
+    border-top-right-radius: 0.375rem;
   }
 
   @media (min-width: 640px) {
