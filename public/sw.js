@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v1.0.10';
+const CACHE_NAME = 'v1.0.11';
 const urlsToCache = [
   '/',
   '/build/bundle.css',
@@ -8,7 +8,7 @@ const urlsToCache = [
 self.addEventListener('install', event => {
   console.log("Installing service worker.");
   self.skipWaiting();
-  
+
   event.waitUntil(
 
     caches.open(CACHE_NAME)

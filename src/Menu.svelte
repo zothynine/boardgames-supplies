@@ -10,6 +10,7 @@
 
 <style>
   main {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     background-color: rgb(22 163 74);
