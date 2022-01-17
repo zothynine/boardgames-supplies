@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v1.1.0';
+const CACHE_NAME = 'v1.1.0a';
 const urlsToCache = [
   '/',
   '/build/bundle.css',
