@@ -1,5 +1,7 @@
 <script>
+  import { appTitle } from '../stores';
 	import Card from './Card.svelte';
+  appTitle.set("Uno Dice Game");
 </script>
 
 <main>
