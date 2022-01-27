@@ -51,7 +51,7 @@
   }
 </script>
 
-<div class="panel {bgColor} sm:flex-auto">
+<div class="panel {bgColor}">
   <div class="card">
     <div class="scores">
       <div class="score">{chain[0] || ""}</div>
@@ -129,6 +129,7 @@
     grid-template-columns: repeat(4, var(--score-tile-size));
     grid-template-rows: repeat(5, var(--score-tile-size));
     gap: var(--grid-gap);
+    margin-top: 30px;
   }
 
   .buttons {
