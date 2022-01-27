@@ -1,3 +1,8 @@
+<script>
+  import { appTitle } from "../stores";
+  appTitle.set("DKT");
+</script>
+
 <main></main>
 
 <style>
