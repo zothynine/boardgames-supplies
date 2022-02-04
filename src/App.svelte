@@ -54,10 +54,12 @@
   .back {
     background: transparent;
     border-width: 0;
+    font-size: inherit;
     padding: 3px 6px;
   }
 
   .version {
     padding: 3px 6px;
+    font-style: normal;
   }
 </style>
