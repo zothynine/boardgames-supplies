@@ -7,7 +7,6 @@
 <main>
   <button on:click={ () => app.set(UnoDiceGame) }>Uno Dice Game</button>
   <button on:click={ () => app.set(Dkt) }>DKT</button>
-  <!-- <button on:click={ () => storedApp.set(UnoDiceGame) }>Whatever Comes Next</button> -->
 </main>
 
 <style>
