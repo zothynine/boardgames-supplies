@@ -2,9 +2,8 @@
   "actions" : {
     "run" : {
       "enabled" : true,
-      "script" : "npm run dev"
+      "script" : "cd src\ndeno task start"
     }
   },
-  "identifier" : "C246D4AD-DFEB-4853-A6D2-FF4E7AA591D8",
   "openLogOnRun" : "start"
 }
