@@ -1,1 +1,1 @@
-export { BgsApp } from './BgsApp.js';
+export { BgsApp } from './bgs-app'

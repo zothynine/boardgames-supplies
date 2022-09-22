@@ -9,11 +9,10 @@
   </style>
 </head>
 <body>
-  <div id="demo"></div>
 
   <script type="module">
     import { html, render } from 'lit';
-    import '../dist/src/bgs-app.js';
+    import '../dist/src/index.js';
 
     const title = 'Hello owc World!';
     render(
@@ -22,7 +21,7 @@
           some light-dom
         </bgs-app>
       `,
-      document.querySelector('#demo')
+      document.querySelector('body')
     );
   </script>
 </body>
