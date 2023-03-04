@@ -1,19 +1,20 @@
 import { type NextPage } from "next";
 import { Layout } from "@/components/layout";
 import Link from "next/link";
+import styles from './index.module.scss';
 
 const Home: NextPage = () => {
 
   return (
     <Layout>
-      <main>
-        <h2>Choose a game&hellip;</h2>
-        <ul>
+      <h2 className={styles.title}>Choose a game&hellip;</h2>
+      <nav>
+        <ul className={styles['app-list']}>
           <li>
-            <Link href="/unodice">Uno Dice</Link>
+            <Link className={styles['app-link']} href="/unodice">Uno Dice</Link>
           </li>
         </ul>
-      </main>
+      </nav>
     </Layout>
   );
 };

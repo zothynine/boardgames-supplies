@@ -1,5 +1,6 @@
 import { Header } from '@/components/header';
 import Head from 'next/head';
+import styles from './layout.module.scss';
 
 type Props = {
   children: React.ReactNode,
@@ -18,8 +19,8 @@ export default function Layout({ children, title }: Props) {
         <meta name="description" content="A collection of digital supplies for physical boardgames" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Header title={renderedTitle} />
+      <Header title={renderedTitle} />
+      <main className={styles.layout}>
         {children}
       </main>
     </>
