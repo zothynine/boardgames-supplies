@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
 type Props = {
-  title?: String
+  title: String
 }
 
-export default function Header({ title = "Boardgames Supplies" }: Props) {
+export default function Header({ title }: Props) {
 
   return (
     <header>

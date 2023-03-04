@@ -2,7 +2,7 @@
 A collections of digital supplies for boardgames.
 
 ### Todo
-- [ ] https
 
-### Done ✓ 
+### Done ✓
 - [x] Configure SCSS
+- [x] https
