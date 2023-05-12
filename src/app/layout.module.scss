@@ -1,0 +1,9 @@
+.layout {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(22 163 74);
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+  padding: var(--site-padding);
+}

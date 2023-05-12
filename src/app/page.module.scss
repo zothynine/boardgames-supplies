@@ -1,0 +1,19 @@
+.title {
+  color: white;
+}
+
+.app-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.app-link {
+  background-color: white;
+  border-color: currentColor;
+  border-style: solid;
+  border-width: 4px;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
