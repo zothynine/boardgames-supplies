@@ -7,15 +7,12 @@ export const metadata = {
   favicon: '/favicon.ico',
 }
 
-export default function RootLayout({ children, title }) {
-
-  const defaultTitle = 'Boardgames Supplies';
-  const renderedTitle = !title ? defaultTitle : `BGS: ${title}`;
+export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
       <body>
-        <Header title={renderedTitle} />
+        <Header />
         <main className={styles.layout}>
           {children}
         </main>
