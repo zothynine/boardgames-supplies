@@ -1,6 +1,10 @@
 import styles from './unodice.module.scss';
 import Card from './card';
 
+export const metadata = {
+  title: 'BGS: UNODICE'
+}
+
 export default function UnoDice() {
 
   return (
