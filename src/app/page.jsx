@@ -9,8 +9,11 @@ export default function Home() {
       <h2 className={styles.title}>Choose a game&hellip;</h2>
       <nav>
         <ul className={styles['app-list']}>
-          <li>
+          <li className={styles['app-list-item']}>
             <Link className={styles['app-link']} href="/unodice">Uno Dice</Link>
+          </li>
+          <li className={styles['app-list-item']}>
+            <Link className={styles['app-link']} href="/dkt">DKT</Link>
           </li>
         </ul>
       </nav>
