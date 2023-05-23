@@ -1,5 +1,5 @@
 'use client';
-import styles from './card.module.scss';
+import styles from './card.module.css';
 import { useState } from "react";
 
 export default function Card({ bgColor }) {

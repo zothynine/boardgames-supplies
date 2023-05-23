@@ -1,4 +1,4 @@
-import styles from './unodice.module.scss';
+import styles from './unodice.module.css';
 import Card from './card';
 
 export const metadata = {

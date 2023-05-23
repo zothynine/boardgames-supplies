@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import styles from './header.module.scss';
+import styles from './header.module.css';
 import { useSelectedLayoutSegment } from 'next/navigation';
 
 export default function Header() {

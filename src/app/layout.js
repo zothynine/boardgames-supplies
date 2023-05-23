@@ -1,4 +1,4 @@
-import styles from './layout.module.scss';
+import styles from './layout.module.css';
 import Header from './header/header';
 
 export const metadata = {
