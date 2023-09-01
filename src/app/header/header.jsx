@@ -1,11 +1,8 @@
+'use client';
 import Link from 'next/link';
 import styles from './header.module.scss';
 
-type Props = {
-  title: String
-}
-
-export default function Header({ title }: Props) {
+export default function Header({ title }) {
 
   const VERSION = '2.0.0';
 

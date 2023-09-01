@@ -1,11 +1,8 @@
+'use client';
 import styles from './card.module.scss';
-import { useState } from 'react';
+import { useState } from "react";
 
-type Props = {
-  bgColor: string
-}
-
-export default function Card({ bgColor }: Props) {
+export default function Card({ bgColor }) {
 
   const initialChain = ['0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0'];
   const initialExtraFields = [false, false, false, false, false, false, false, false];
@@ -16,9 +13,9 @@ export default function Card({ bgColor }: Props) {
   /* Handle button clicks
   /* @param {MouseEvent} event
   */
-  function onButtonClick(event: React.MouseEvent): void {
+  function onButtonClick(event) {
 
-    const target = event.target as HTMLHtmlElement;
+    const target = event.target;
     const button = target.closest('button');
     if (!button) return;
     const value = button?.value || "";

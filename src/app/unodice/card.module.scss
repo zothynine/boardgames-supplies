@@ -9,15 +9,15 @@
   scroll-snap-align: start;
   margin: 0;
   padding: 0;
-  
+
   @media (min-width: 640px) {
     --width-basis: 50vw;
   }
-  
+
   @media (min-width: 1024px) {
     --width-basis: 25vw;
   }
-  
+
   @media (min-height: 661px) {
     --score-tile-size: 60px;
     --grid-gap: 5px;

@@ -1,12 +1,11 @@
-import { type NextPage } from "next";
-import { Layout } from "@/components/layout";
+import '../styles/globals.scss';
+import styles from './page.module.scss';
 import Link from "next/link";
-import styles from './index.module.scss';
 
-const Home: NextPage = () => {
+export default function Home() {
 
   return (
-    <Layout>
+    <>
       <h2 className={styles.title}>Choose a game&hellip;</h2>
       <nav>
         <ul className={styles['app-list']}>
@@ -15,8 +14,6 @@ const Home: NextPage = () => {
           </li>
         </ul>
       </nav>
-    </Layout>
+    </>
   );
-};
-
-export default Home;
+}
