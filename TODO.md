@@ -2,8 +2,6 @@
 A collections of digital supplies for boardgames.
 
 ### Todo
-- [ ] Languages
+- [ ] Port existing app to sveltekit
 
 ### Done ✓
-- [x] Configure SCSS
-- [x] https
