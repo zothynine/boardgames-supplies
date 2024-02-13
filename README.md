@@ -1,5 +1,6 @@
-# Boradgames Supplies
+# Boardgames Supplies
 
+Digital substitues, for broken or used up board game supplies.
 ## Get Startet
 
 - Run `pnpm i`
